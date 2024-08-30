@@ -1,0 +1,581 @@
+*,
+*::after,
+*::before {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.clearfix::before,
+.clearfix::after {
+	content: "";
+	display: table;
+}
+
+.clearfix::after {
+	clear: both;
+}
+
+body {
+	font-family: mosk, Helvetica, Arial, sans-serif;
+	color: #434C5E;
+	background: #ECEFF4;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+a {
+	text-decoration: none;
+	color: #88C0D0;
+	outline: none;
+}
+
+a:hover,
+a:focus {
+	color: #6DD2DA;
+}
+
+.hidden {
+	position: absolute;
+	overflow: hidden;
+	width: 0;
+	height: 0;
+	pointer-events: none;
+}
+
+/* Canvas container */
+
+.container {
+	position: fixed;
+	z-index: -1;
+	top: 0;
+	left: 0;
+}
+
+/* Parallax */
+
+@keyframes fade {
+
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+.parallax {
+	perspective: 100px;
+	height: 100vh;
+	width: 100%;
+	overflow-x: hidden;
+	overflow-y: auto;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 6000;
+	animation: fade 5s;
+	animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.parallax_layer {
+	margin: 0 auto;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+}
+
+.parallax_layer img {
+	display: block;
+	position: absolute;
+	bottom: 0;
+	max-width: 100%;
+}
+
+.parallax_cover {
+	background: #16161D;
+	transform: translateZ(0) scale(1);
+	display: block;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	right: 0;
+	height: 100vh;
+}
+
+.parallax_layer_0 {
+	transform: translateZ(-300px) scale(4);
+}
+
+.parallax_layer_1 {
+	transform: translateZ(-250px) scale(3.5);
+}
+
+.parallax_layer_2 {
+	transform: translateZ(-200px) scale(3);
+}
+
+.parallax_layer_3 {
+	transform: translateZ(-150px) scale(2.5);
+}
+
+.parallax_layer_4 {
+	transform: translateZ(-100px) scale(2);
+}
+
+.parallax_layer_5 {
+	transform: translateZ(-50px) scale(1.5);
+}
+
+.parallax_layer_6 {
+	transform: translateZ(0) scale(1);
+}
+
+/* Header */
+
+@keyframes fadeup {
+
+	from {
+		opacity: 0;
+		transform: translateY(2rem);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.header {
+	position: relative;
+	z-index: 1000;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	padding: 2em 1em 4em;
+	text-align: center;
+	color: #ECEFF4;
+	background: #002D42 /* url(../img/journey/2.jpg) no-repeat center center*/;
+	background-size: cover;
+}
+
+.header-title {
+	position: relative;
+	text-transform: uppercase;
+	margin-top: -15%;
+	animation: fadeup 3.5s;
+	animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.header-title__main {
+	font-family: wanderlust, Baskerville, serif;
+	font-size: 2.7em;
+	font-weight: 700;
+	line-height: 1;
+	margin: 0 0 0.15em 0;
+}
+
+.header-title__part {
+	font-family: youngserif, Baskerville, serif;
+	font-size: 0.85em;
+	font-weight: 400;
+	display: block;
+	padding: 0.5em 0 1.8em;
+	text-indent: 4px;
+	letter-spacing: 4px;
+	text-transform: uppercase;
+}
+
+.header-title__part::before,
+.header-title__part::after {
+	content: "\2014";
+	padding: 0 0.5em;
+}
+
+.header-title__sub,
+.header-title__authors {
+	font-weight: normal;
+	display: block;
+	max-width: 720px;
+	margin: 0 auto;
+	color: #E5E9F0;
+	font-size: 1em;
+	padding-bottom: 0.2em;
+}
+
+.header-title__authors {
+	font-family: odachi, sans-serif;
+}
+
+.header-title__authors a {
+	color: #E5E9F0;
+}
+
+.intro {
+	font-family: odachi, Baskerville, Garamond, serif;
+	z-index: 1000;
+	display: -webkit-flex;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	padding: 3em;
+	text-align: center;
+	color: #ECEFF4;
+}
+
+.intronoparallax {
+	display: none;
+	font-family: odachi, Baskerville, Garamond, serif;
+	background: #16161D;
+	z-index: 1000;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	padding: 3em;
+	text-align: center;
+	color: #ECEFF4;
+}
+
+.quote-intro {
+	margin: 0 auto;
+	max-width: 100%;
+	font-style: italic;
+	font-size: 2.7em;
+}
+
+.quote-intro-author {
+	display: block;
+	font-family: youngserif, serif;
+	font-style: normal;
+	position: relative;
+	top: 2em;
+	right: -4em;
+	color: #D8DEE9;
+	font-size: 1.8em;
+}
+
+/* Content */
+
+.content {
+	padding: 3em 0;
+}
+
+/* Story */
+
+.text {
+	position: relative;
+	z-index: 2000;
+	padding: 10em 3em;
+}
+
+.text section {
+	font-size: 1.25em;
+	line-height: 1.4;
+}
+
+.text section h2 {
+	font-size: 2.7em;
+	font-weight: 400;
+	margin: 0;
+	text-align: left;
+}
+
+.text section:not(:first-child) h2 {
+	padding: 2em 0 0 0;
+}
+
+.title-up {
+	font-size: 0.365em;
+	font-weight: bold;
+	display: block;
+	letter-spacing: 7px;
+	text-transform: uppercase;
+	color: #CECEC5;
+}
+
+.title-down {
+	font-family: wanderlust, Baskerville, serif;
+	font-size: 1.35em;
+	font-weight: 400;
+	line-height: 0.9;
+	display: block;
+	padding: 0.15em 0 0.35em;
+	color: #3B4252;
+}
+
+.js-section {
+	width: 50%;
+	max-width: 700px;
+}
+
+.js-gallery {
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+.js-gallery-content {
+	font-size: 0;
+	text-align: center;
+}
+
+.js-gallery-content img {
+	max-width: 100%;
+	margin: 10px 0;
+}
+
+.text figure {
+	margin: 1em 0 2em;
+}
+
+.text figure img {
+	width: 100%;
+}
+
+.text figcaption {
+	font-size: 0.85em;
+	font-style: italic;
+	padding: 0.5em 1.5em;
+	text-align: center;
+	color: #3B4252;
+}
+
+.text section p {
+	font-size: 1em;
+	margin: 0.5em 0 1.5em;
+}
+
+.text section p.indent {
+	text-indent: 1.2em;
+}
+
+.text section p.quote {
+	font-size: 2em;
+	font-style: italic;
+	line-height: 1.2;
+	margin: 0.3em 0;
+	text-align: left;
+	color: #4C566A;
+	font-family: odachi, sans-serif;
+	text-indent: 0;
+}
+
+/* endscreen */
+
+.endscreen {
+	position: relative;
+	z-index: 1000;
+	padding: 10em 2em;
+	text-align: center;
+	color: #ECEFF4;
+	background: #2E3440;
+}
+
+.info {
+	font-size: 2.4em;
+	font-weight: bold;
+	padding: 0;
+	margin: 0 auto;
+}
+
+/* Transitions */
+
+.transition-footer {
+	background-image: url("../img/pattern.png");
+	height: 92px;
+	margin-bottom: -46px;
+	z-index: 99999;
+	position: relative;
+}
+
+.transition-header {
+	background-image: url("../img/pattern-top.png");
+	height: 91px;
+	position: relative;
+}
+
+/* Footer */
+
+.footer {
+	position: relative;
+	z-index: 1000;
+	padding: 10em 2em;
+	text-align: center;
+	color: #ECEFF4;
+	background: #16161D;
+}
+
+.col_footer {
+	display: inline-block;
+	padding: 0 2em;
+	text-align: left;
+	vertical-align: top;
+}
+
+.col_credits,
+.col_contact {
+	max-width: 20%;
+}
+
+.col_acknowledgements {
+	max-width: 35%;
+}
+
+ul {
+	padding-left: 1em;
+	list-style-type: circle;
+
+	/* list-style-image: url('../img/ferry.svg'); */
+}
+
+li {
+	padding: 0.25em 0;
+	font-size: 0.9em;
+}
+
+/* Responsive Medium */
+
+@media (max-width: 1280px) {
+
+	.parallax {
+		display: none;
+	}
+
+	.intronoparallax {
+		display: -webkit-flex;
+		display: flex;
+	}
+
+	.header-title {
+		position: relative;
+		margin-top: 0;
+	}
+
+	.quote-intro {
+		font-size: 2em;
+	}
+
+	.quote-intro-author {
+		font-size: 1.2em;
+	}
+
+	.footer {
+		text-align: left;
+	}
+
+	.col_footer {
+		min-width: 90%;
+		padding-left: 15%;
+	}
+}
+
+/* Responsive Small */
+@media (max-width: 720px) {
+
+	.header-title {
+		font-size: 20px;
+	}
+
+	.intro {
+		font-size: 1.25em;
+		padding: 2em;
+		min-height: 70%;
+	}
+
+	.text {
+		font-size: 0.85em;
+		padding: 2em;
+		text-align: justify;
+	}
+
+	.text section h2 {
+		font-size: 1.85em;
+	}
+
+	.js-section {
+		width: 100%;
+		max-width: none;
+	}
+
+	.col_shop {
+		max-width: none;
+	}
+
+	.col_footer {
+		max-width: 70%;
+	}
+
+	.info {
+		font-size: 1.5em;
+	}
+
+	.availability {
+		font-size: 1em;
+	}
+
+	.quote-intro-author {
+		right: 0;
+	}
+}
+
+/* Responsive Small */
+
+@media (max-width: 360px) {
+
+	.col_footer {
+		max-width: 100%;
+	}
+
+	.header-title__main {
+		font-size: 2em;
+	}
+
+	.header-title__part {
+		font-size: 0.6em;
+	}
+
+	.header-title__sub,
+	.header-title__authors {
+		font-size: 0.6em;
+	}
+
+	.header-title__part::before,
+	.header-title__part::after {
+		padding: 0;
+	}
+}
+
+/* Responsive Parallax */
+
+@media only screen and (max-width: 2000px) {
+
+	.parallax_layer {
+		left: -20%;
+		width: 150%;
+	}
+}
+
+@media only screen and (max-width: 900px) {
+
+	.parallax_layer {
+		left: -50%;
+		width: 200%;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+
+	.parallax_layer {
+		left: -100%;
+		width: 300%;
+	}
+}
